@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { updataProfile } from '@/app/_lib/actions';
 import { useFormStatus} from 'react-dom'
 import SubmitButton from '@/app/_components/SubmitButton';
+import Image from 'next/image';
 function UpdateProfileForm({children, guest}) {
   const [count, setCount] = useState();
 const {fullName, email, nationality, nationalID, countryFlag} = guest;
@@ -35,7 +36,7 @@ const {fullName, email, nationality, nationalID, countryFlag} = guest;
         <div className="flex items-center justify-between">
           <label htmlFor="nationality">Where are you from?</label>
           <div className='relative'>
-            <img
+            <Image
               src={countryFlag}
               alt="Country flag"
               className="h-5 rounded-sm object-cover"
